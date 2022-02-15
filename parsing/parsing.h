@@ -25,6 +25,13 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct s_size
+{
+	int		x_size;
+	int		y_size;
+}			t_size;
+
+
 /* list */
 void	add_list(t_list *list_head, t_list *new);
 void	clear_list(t_list *list_head);
@@ -37,7 +44,7 @@ int			get_next_line(int fd, char **line);
 
 /* lexer */
 int	lexer_list(t_list *list_head);
-
+int	init_map(t_list *list_ptr);
 
 /* parsing */
 int	parsing(char *filename);

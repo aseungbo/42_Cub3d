@@ -14,9 +14,9 @@ static void	add_new_list(t_list *list_head, char *line)
 
 int	parsing(char *filename)
 {
+	t_list	list_head;
 	int		open_fd;
 	char	*line;
-	t_list	list_head;
 	int		check;
 
 	list_head.next = NULL;
@@ -26,12 +26,6 @@ int	parsing(char *filename)
 	while (get_next_line(open_fd, &line) > 0)
 		add_new_list(&list_head, line);
 	check = lexer_list(&list_head);
-
-	printf("checker %d\n", check);
-	for(int i=0;i<6;i++)
-		printf("%d = [%s]\n",i,get_cub()->config[i]);
-
-
 	clear_list(&list_head);
 	return (check);
 }
