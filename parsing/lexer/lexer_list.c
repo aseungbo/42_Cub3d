@@ -35,7 +35,6 @@ static void	fill_config(char *str, int *flag)
 		i++;
 	path = ft_strdup(str + i);
 	type = check_identifier(iden);
-	printf("iden = %s path = %s\n", iden, path);
 	free (iden);
 	if (type < 0)
 	{
@@ -66,7 +65,7 @@ int	lexer_list(t_list *list_head)
 	t_list	*list_ptr;
 	int		flag[6];
 
-	ft_memset(&flag, OFF, 6);
+	ft_memset(flag, OFF, sizeof(int) * 6);
 	list_ptr = list_head->next;
 	while (list_ptr != NULL && check_flags(flag))
 	{
@@ -74,10 +73,10 @@ int	lexer_list(t_list *list_head)
 		list_ptr = list_ptr->next;
 	}
 	if (check_flags(flag) == 1)
-		return (FAILURE);		// flag remained
+		return (FAILURE);		// flag remained but list is reached null
 	if (list_ptr == NULL)
 		return (FAILURE);		// map doesn't exist
-	// check = init_map(list_ptr);
+	init_map(list_ptr);
 	// if (init_map < 0)
 	// 	return (1);		// invalid map
 	return (SUCCESS);
