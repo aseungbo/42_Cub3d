@@ -3,7 +3,9 @@
 t_cub	*get_cub()
 {
 	static t_cub	cub;
+	static t_size	size;
 
+	cub.size = &size;
 	return (&cub);
 }
 

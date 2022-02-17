@@ -72,12 +72,20 @@ int	lexer_list(t_list *list_head)
 		fill_config(list_ptr->str, flag);
 		list_ptr = list_ptr->next;
 	}
-	if (check_flags(flag) == 1)
-		return (FAILURE);		// flag remained but list is reached null
 	if (list_ptr == NULL)
-		return (FAILURE);		// map doesn't exist
-	init_map(list_ptr);
-	// if (init_map < 0)
-	// 	return (1);		// invalid map
+	{
+		if (check_flags(flag) == 1)
+		{
+			printf("can't find config resources\n");
+			return (FAILURE);
+		}
+		printf("can't find map resources\n");
+		return (FAILURE);
+	}
+	if (init_map(list_ptr) == FAILURE)
+	{
+		printf("invalid map\n");
+		return (FAILURE);
+	}
 	return (SUCCESS);
 }

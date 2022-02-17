@@ -17,7 +17,12 @@ PARSING_SRC		=	parsing/parsing.c\
 					parsing/list/last_list.c\
 					parsing/list/new_list.c\
 					parsing/list/size_list.c\
-					parsing/lexer/lexer_list.c
+					parsing/lexer/lexer_list.c\
+					parsing/lexer/map/init_map.c\
+					parsing/lexer/map/fill_map.c\
+					parsing/lexer/map/check_ud.c\
+					parsing/lexer/map/check_lr.c
+
 PARSING_OBJ		=	$(PARSING_SRC:.c=.o)
 
 MAIN			=	main.c
