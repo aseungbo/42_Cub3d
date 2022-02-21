@@ -22,7 +22,6 @@ PARSING_SRC		=	parsing/parsing.c\
 					parsing/lexer/map/fill_map.c\
 					parsing/lexer/map/check_ud.c\
 					parsing/lexer/map/check_lr.c
-
 PARSING_OBJ		=	$(PARSING_SRC:.c=.o)
 
 MAIN			=	main.c

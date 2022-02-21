@@ -1,11 +1,11 @@
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-
-# include "../libft/libft.h"
-# include "../parsing/parsing.h"
+#ifndef CUB3D_H
+# define CUB3D_H
 
 # include <fcntl.h>
 # include <stdio.h>
+
+# include "../parsing/parsing.h"
+# include "../libft/libft.h"
 
 # define SUCCESS 0
 # define FAILURE 1
