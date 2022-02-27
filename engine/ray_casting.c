@@ -180,6 +180,25 @@ int		get_color(t_wall *wall)
 		return (0);
 }
 
+int		get_texture_color_we(t_wall *wall)
+{
+	int		tx;
+	int		ty;
+
+	tx = (int)(64 * (wall->x - floor(wall->x)));
+}
+
+int		get_pixel_color(t_cub *cub, int type, int x, int y)
+{
+	t_img	img;
+	int		color;
+
+	img.img = cub->textures.no;
+	img.data = mlx_get_data_addr(img.img, &(img.bpp), &(img.line_size), &(img.endian));
+	color = (int)*(img.data + (y * img.line_size + x * (img.bpp / 8)));
+	return (color);
+}
+
 void	draw_wall(t_wall *wall, int x)
 {
 	int		wh;
